@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913" />
+      <stop offset="50%" stop-color="#0b112c" />
+      <stop offset="100%" stop-color="#050711" />
+    </linearGradient>
+
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b224ef" />
+      <stop offset="100%" stop-color="#7579ff" />
+    </linearGradient>
+
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowPurple" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1" />
+      <circle cx="40" cy="40" r="1" fill="rgba(56, 189, 248, 0.2)" />
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulseOrb {
+      0%, 100% { transform: scale(1); opacity: 0.35; }
+      50% { transform: scale(1.2); opacity: 0.65; }
+    }
+    @keyframes floatBeam {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(1deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    @keyframes dashMove {
+      to { stroke-dashoffset: -100; }
+    }
+    @keyframes nodePulse {
+      0%, 100% { r: 4px; opacity: 0.6; }
+      50% { r: 6.5px; opacity: 1; filter: drop-shadow(0 0 6px #38bdf8); }
+    }
+    .orb-cyan {
+      animation: pulseOrb 8s ease-in-out infinite alternate;
+      transform-origin: 200px 100px;
+    }
+    .orb-purple {
+      animation: pulseOrb 10s ease-in-out infinite alternate-reverse;
+      transform-origin: 1000px 300px;
+    }
+    .graph-cluster {
+      animation: floatBeam 6s ease-in-out infinite;
+    }
+    .data-line {
+      stroke-dasharray: 6 8;
+      animation: dashMove 12s linear infinite;
+    }
+    .pulsing-node {
+      animation: nodePulse 3s ease-in-out infinite alternate;
+    }
+    .pill-card {
+      transition: all 0.3s ease;
+    }
+  </style>
+
+  <!-- Deep Sci-Fi Background -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)" />
+  <rect width="1200" height="420" rx="16" fill="url(#grid)" />
+
+  <!-- Dynamic Ambient Glow Orbs -->
+  <circle class="orb-cyan" cx="200" cy="120" r="160" fill="#38bdf8" opacity="0.25" filter="url(#glowPurple)" />
+  <circle class="orb-purple" cx="1020" cy="280" r="180" fill="#818cf8" opacity="0.25" filter="url(#glowPurple)" />
+  <circle cx="600" cy="40" r="120" fill="#ec4899" opacity="0.12" filter="url(#glowPurple)" />
+
+  <!-- Animated High-Performance Computing Vector Graph Mesh (Background / Accent) -->
+  <g class="graph-cluster" opacity="0.55">
+    <!-- Connecting Vector Mesh Edges -->
+    <path class="data-line" d="M 80 80 L 220 180 L 160 320 L 320 280 L 440 360 L 280 120 Z" fill="none" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5" />
+    <path class="data-line" d="M 880 70 L 1020 130 L 1120 80 L 1060 260 L 920 340 L 980 190 Z" fill="none" stroke="rgba(192, 132, 252, 0.35)" stroke-width="1.5" />
+    
+    <!-- Vector Nodes -->
+    <circle class="pulsing-node" cx="80" cy="80" r="4" fill="#38bdf8" />
+    <circle class="pulsing-node" cx="220" cy="180" r="5" fill="#818cf8" />
+    <circle class="pulsing-node" cx="160" cy="320" r="4" fill="#38bdf8" />
+    <circle class="pulsing-node" cx="320" cy="280" r="6" fill="#00f2fe" />
+    <circle class="pulsing-node" cx="280" cy="120" r="4" fill="#c084fc" />
+    <circle class="pulsing-node" cx="880" cy="70" r="4" fill="#818cf8" />
+    <circle class="pulsing-node" cx="1020" cy="130" r="6" fill="#c084fc" />
+    <circle class="pulsing-node" cx="1120" cy="80" r="4" fill="#38bdf8" />
+    <circle class="pulsing-node" cx="1060" cy="260" r="5" fill="#f43f5e" />
+    <circle class="pulsing-node" cx="920" cy="340" r="5" fill="#a855f7" />
+  </g>
+
+  <!-- Foreground Foreground Container (Ensures 100% crisp readability) -->
+  <g transform="translate(600, 150)" text-anchor="middle">
+    <!-- Super Header Badge -->
+    <g transform="translate(0, -65)">
+      <rect x="-170" y="-16" width="340" height="32" rx="16" fill="rgba(30, 41, 59, 0.85)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1" />
+      <circle cx="-145" cy="0" r="5" fill="#22c55e" />
+      <text x="-130" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#38bdf8" letter-spacing="1.5" text-anchor="start">ULTRA-FAST SIMD • GPU • ANN KERNELS</text>
+    </g>
+
+    <!-- Main Title -->
+    <text y="15" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif" font-size="46" font-weight="900" fill="url(#titleGrad)" letter-spacing="-1">
+      HPC Vector Search &amp; Databases
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif" font-size="17" font-weight="400" fill="#94a3b8" letter-spacing="0.2">
+      Curated index of billion-scale Approximate Nearest Neighbor (ANN) engines, GPU kernels &amp; vector databases
+    </text>
+  </g>
+
+  <!-- Dynamic Feature Badges / Pills Bar -->
+  <g transform="translate(600, 275)">
+    <!-- Pill 1: GPU / CUDA -->
+    <g class="pill-card" transform="translate(-400, 0)">
+      <rect x="-75" y="-18" width="150" height="36" rx="18" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1" />
+      <text x="0" y="5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">⚡ GPU &amp; CUDA</text>
+    </g>
+
+    <!-- Pill 2: HNSW & Graphs -->
+    <g class="pill-card" transform="translate(-200, 0)">
+      <rect x="-85" y="-18" width="170" height="36" rx="18" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(129, 140, 248, 0.3)" stroke-width="1" />
+      <text x="0" y="5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">🕸️ HNSW &amp; DiskANN</text>
+    </g>
+
+    <!-- Pill 3: AVX-512 & SIMD -->
+    <g class="pill-card" transform="translate(0, 0)">
+      <rect x="-80" y="-18" width="160" height="36" rx="18" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(192, 132, 252, 0.3)" stroke-width="1" />
+      <text x="0" y="5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">🚀 AVX-512 / SIMD</text>
+    </g>
+
+    <!-- Pill 4: Hybrid & BM25 -->
+    <g class="pill-card" transform="translate(200, 0)">
+      <rect x="-85" y="-18" width="170" height="36" rx="18" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(244, 63, 94, 0.3)" stroke-width="1" />
+      <text x="0" y="5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">🔍 Hybrid &amp; Lexical</text>
+    </g>
+
+    <!-- Pill 5: Embedded & Edge -->
+    <g class="pill-card" transform="translate(400, 0)">
+      <rect x="-75" y="-18" width="150" height="36" rx="18" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1" />
+      <text x="0" y="5" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">📱 Edge &amp; In-Memory</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Status Line -->
+  <g transform="translate(600, 360)">
+    <line x1="-480" y1="0" x2="480" y2="0" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+    <text y="24" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500" fill="#64748b">
+      High Performance Computing (HPC) • Approximate Nearest Neighbor (ANN) • Billion-Scale Dense Embeddings
+    </text>
+  </g>
+</svg>
